@@ -42,10 +42,12 @@ Custom alert component to display alert message
 ```
 import {Alert} from "@spritz/ui-components"
 
-Example - <Alert type="success"> I am success alter message </Alert>
+<Alert type="success"> I am success alter message </Alert>
 ```
 
 #### Props
+| Name                | Type   | Value                                | Description                                   |
+|---------------------|--------|--------------------------------------|-----------------------------------------------|
+| type (required)     | String | "success", "warning" and "error"     | Pass message type for color and bg color      |
+| message (required)  | String | "Message"                            | Content for display in alert
 
-- type (required) = 'success' | 'warning' | 'error'
-- message (required) = Display message
