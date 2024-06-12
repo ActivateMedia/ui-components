@@ -18,7 +18,7 @@ This package provides shareable, small UI components designed for Spritz partner
 
 react.js: >= 18.x.x,  
 node: >= 18.x.x,  
-next.js: >= 13.x.x 
+next.js: >= 13.x.x
 
 ## Installation
 
@@ -32,10 +32,9 @@ To install this package use:
 
 You can read the section below to learn how to use these components in your project.
 
-
 ## Documentation
 
-### Alert
+## Alert
 
 Custom alert component to display alert message
 
@@ -46,12 +45,15 @@ import {Alert} from "@spritz/ui-components"
 ```
 
 #### Props
-| Name                | Type   | Value                                | Description                                   |
-|---------------------|--------|--------------------------------------|-----------------------------------------------|
-| type (required)     | String | "success", "warning" and "error"     | Pass message type for color and bg color      |
-| message (required)  | String | "Message"                            | Content for display in alert
 
-### Badge
+| Name               | Type   | Value                            | Description                              |
+| ------------------ | ------ | -------------------------------- | ---------------------------------------- |
+| type (required)    | String | "success", "warning" and "error" | Pass message type for color and bg color |
+| message (required) | String | "Message"                        | Content for display in alert             |
+
+---
+
+## Badge
 
 Custom badge component to display badge
 
@@ -62,8 +64,141 @@ import {Badge} from "@spritz/ui-components"
 ```
 
 #### Props
-| Name                | Type   | Value                                | Description                                   |
-|---------------------|--------|--------------------------------------|-----------------------------------------------|
-| badgeText (required)     | String | "Message"      | Pass text to display in badge      |
-| className (optional)  | String | "overwrite design with your class" | To modify bage design according to your need |
 
+| Name                 | Type   | Value                              | Description                                   |
+| -------------------- | ------ | ---------------------------------- | --------------------------------------------- |
+| badgeText (required) | String | "Message"                          | Pass text to display in badge                 |
+| className (optional) | String | "overwrite design with your class" | To modify badge design according to your need |
+
+---
+
+## Box Shadow
+
+Custom shadow component to display box with shadow
+
+```Javascript
+import {BoxShadow} from "@spritz/ui-components"
+
+<BoxShadow> I am success alter message </BoxShadow>
+```
+
+#### Props
+
+| Name                 | Type      | Value                              | Description                                        |
+| -------------------- | --------- | ---------------------------------- | -------------------------------------------------- |
+| children (required)  | ReactNode | "React components"                 | Pass react node to display in box                  |
+| className (optional) | String    | "overwrite design with your class" | Pass class to modify design according to your need |
+
+---
+
+## Brand
+
+Logo with brand name
+
+```Javascript
+import {Brand} from "@spritz/ui-components"
+
+<Brand svg="https://dev.w3.org/SVG/tools/svgweb/samples/svg-files/acid.svg" />
+```
+
+#### Props
+
+| Name                    | Type     | Value                                | Description                 |
+| ----------------------- | -------- | ------------------------------------ | --------------------------- |
+| svg (required)          | String   | "Svg url"                            | Pass svg url for brand logo |
+| clickHandler (optional) | Function | clickHandler={(e)=>{console.log(e)}} | On element click handler    |
+
+---
+
+## Button
+
+React button
+
+```Javascript
+import {Button} from "@spritz/ui-components"
+
+<Button type="button"> Click me </Button>
+```
+
+#### Props
+
+| Name                | Type      | Value                                    | Description                                       |
+| ------------------- | --------- | ---------------------------------------- | ------------------------------------------------- | ------------------ | ----------- |
+| type (require)      | String    | "button                                  | 'submit                                           | reset"             | Button type |
+| id (optional)       | String    | "Element id"                             | Pass svg url for brand logo                       |
+| children (options)  | ReactNode | "Html and string"                        | Display content                                   |
+| className (options) | String    | "Css class"                              | Pass class to modify design                       |
+| disabled (options)  | Boolean   | "true                                    | false"                                            | Is disabled button |
+| leftIcon (options)  | String    | "svg icon path"                          | Pass icon to display icon on left side of button  |
+| rightIcon (options) | String    | "svg icon path"                          | Pass icon to display icon on right side of button |
+| iconColor (options) | Hex code  | "Icon color code"                        | Pass color for icon                               |
+| onClick (options)   | Function  | "onClick={()=>{console.log('clicked')}}" | Handle button on click                            |
+
+---
+
+## DaySelector
+
+React Day selector button
+
+```Javascript
+import {DaySelector} from "@spritz/ui-components"
+
+<DaySelector letter="M" selected={true} onClick={()=>{console.log("clicked")}} />
+```
+
+#### Props
+
+| Name                | Type     | Value                                    | Description                 |
+| ------------------- | -------- | ---------------------------------------- | --------------------------- |
+| letter (require)    | String   | "Week first latter"                      | Week first name with badge  |
+| selected (required) | Boolean  | "true/false"                             | Is selected                 |
+| className (options) | String   | "Css class"                              | Pass class to modify design |
+| onClick (required)  | Function | "onClick={()=>{console.log('clicked')}}" | Handle button on click      |
+
+---
+
+# React-redux Form Elements
+
+## Checkbox
+
+React redux form checkbox element
+
+```Javascript
+import { Field, reduxForm } from 'redux-form';
+import {Checkbox} from "@spritz/ui-components"
+
+const ReduxForm: FunctionComponent<any> = (props)=>{
+return (
+   <form>
+      <Field
+        component={Checkbox}
+        label="Checkbox 01"
+        name="checkbox"
+        type="checkbox"
+        className=""
+        onChange={(ele: any)=>{console.log(ele.target)}}
+      />
+   </form>
+   )
+}
+
+export default reduxForm<any, any, string>({
+  form: 'checkboxForm',
+  destroyOnUnmount: true,
+  forceUnregisterOnUnmount: true
+})(ReduxForm);
+
+```
+
+#### Props
+
+| Name                | Type     | Value                                              | Description                 |
+| ------------------- | -------- | -------------------------------------------------- | --------------------------- |
+| label (require)     | String   | "Checkbox display label"                           | Label of check box          |
+| type (require)      | String   | "checkbox"                                         | Type of checkbox            |
+| name (require)      | String   | "checkbox"                                         | Name of checkbox            |
+| id (optional)       | String   | "id"                                               | Id of checkbox              |
+| className (options) | String   | "Css class"                                        | Pass class to modify design |
+| onChange (required) | Function | "onChange={(ele: any)=>{console.log(ele.target)}}" | Handle checkbox on change   |
+
+---
