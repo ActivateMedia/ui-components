@@ -1,0 +1,10 @@
+$grid-breakpoints: (
+  'mobile': 576px,
+  'tab': 768px,
+  'medium': 992px,
+  'large': 1200px,
+  'x-large': 1920px
+) !default;
+
+// Transition
+$transition-standard: 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
