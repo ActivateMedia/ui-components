@@ -16,9 +16,9 @@ This package provides shareable, small UI components designed for Spritz partner
 
 ## Compatibility
 
+react.js: >= 18.x.x,  
 node: >= 18.x.x,  
-next.js: >= 13.x.x,
-react.js: >= 18.x.x
+next.js: >= 13.x.x 
 
 ## Installation
 
@@ -30,47 +30,8 @@ To install this package use:
 
 ## Quick start
 
-Read below section to know about how to use these components in your project.
+You can read the section below to learn how to use these components in your project.
 
-```Javascript
-const Hapi = require('@hapi/hapi');
-
-(async () => {
-    try{
-        const server = await new Hapi.Server({
-            host: 'localhost',
-            port: 3000,
-        });
-
-        await server.register({
-            plugin: require('hapi-query-builder'),
-            options: {
-                defaultSelectField: '_id', // (optional)- Pass field name for default select if $select is empty
-            },
-        });
-
-        server.route({
-            method: 'GET',
-            path: '/query',
-            handler: function (request, h) {
-                return {
-                    query: request.parsedQuery,
-                };
-            },
-        });
-
-        await server.start();
-        console.log('Server running at:', server.info.uri);
-    } catch (err) {
-        console.error(err);
-        process.exit(1);
-    }
-})();
-```
-
-### Example
-
-You just pass query in query params form Front-end in request.
 
 ## Documentation
 
