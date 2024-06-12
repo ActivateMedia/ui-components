@@ -39,7 +39,7 @@ You can read the section below to learn how to use these components in your proj
 
 Custom alert component to display alert message
 
-```
+```Javascript
 import {Alert} from "@spritz/ui-components"
 
 <Alert type="success"> I am success alter message </Alert>
@@ -55,7 +55,7 @@ import {Alert} from "@spritz/ui-components"
 
 Custom badge component to display badge
 
-```
+```Javascript
 import {Badge} from "@spritz/ui-components"
 
 <Badge type="success"> I am success alter message </Alert>
