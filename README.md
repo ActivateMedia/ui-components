@@ -17,7 +17,7 @@ This package provides shareable, small UI components designed for Spritz partner
 ## Compatibility
 
 node: >= 18.x.x,  
-next.js: >= 13.x.x
+next.js: >= 13.x.x,
 react.js: >= 18.x.x
 
 ## Installation
