@@ -124,11 +124,11 @@ import {Button} from "@spritz/ui-components"
 
 | Name                | Type      | Value                                    | Description                                       |
 | ------------------- | --------- | ---------------------------------------- | ------------------------------------------------- |
-| type (require)      | String    | "button, submit, and reset"             | Button type                                       |
+| type (require)      | String    | "button, submit, and reset"              | Button type                                       |
 | id (optional)       | String    | "Element id"                             | Pass svg url for brand logo                       |
 | children (options)  | ReactNode | "Html and string"                        | Display content                                   |
 | className (options) | String    | "Css class"                              | Pass class to modify design                       |
-| disabled (options)  | Boolean   | "true/false"                         | Is disabled button                                |
+| disabled (options)  | Boolean   | "true/false"                             | Is disabled button                                |
 | leftIcon (options)  | String    | "svg icon path"                          | Pass icon to display icon on left side of button  |
 | rightIcon (options) | String    | "svg icon path"                          | Pass icon to display icon on right side of button |
 | iconColor (options) | Hex code  | "Icon color code"                        | Pass color for icon                               |
