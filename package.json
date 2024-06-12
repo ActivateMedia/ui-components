@@ -1,7 +1,7 @@
 {
   "name": "@activatestudio/spritz-ui-components",
   "version": "0.0.1",
-  "description": "This is shared components library for Next.js projects.",
+  "description": "This is shared components library for spritz projects.",
   "scripts": {
     "build": "rollup -c",
     "watch": "rollup -c -w",
@@ -49,7 +49,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ActivateMedia/ui-components.git"
+    "url": "git+https://github.com/ActivateMedia/ui-components.git"
   },
   "keywords": [
     "next.js",

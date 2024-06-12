@@ -25,7 +25,7 @@ next.js: >= 13.x.x
 To install this package use:
 
 ```bash
- npm install file:/path/to/your/package/ui-components
+ npm install @activatestudio/spritz-ui-components
 ```
 
 ## Quick start
