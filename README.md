@@ -51,3 +51,19 @@ import {Alert} from "@spritz/ui-components"
 | type (required)     | String | "success", "warning" and "error"     | Pass message type for color and bg color      |
 | message (required)  | String | "Message"                            | Content for display in alert
 
+### Badge
+
+Custom badge component to display badge
+
+```
+import {Badge} from "@spritz/ui-components"
+
+<Badge type="success"> I am success alter message </Alert>
+```
+
+#### Props
+| Name                | Type   | Value                                | Description                                   |
+|---------------------|--------|--------------------------------------|-----------------------------------------------|
+| badgeText (required)     | String | "Message"      | Pass text to display in badge      |
+| className (optional)  | String | "overwrite design with your class" | To modify bage design according to your need |
+
