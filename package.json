@@ -1,5 +1,5 @@
 {
-  "name": "@spritz/ui-components",
+  "name": "@activatestudio/spritz-ui-components",
   "version": "0.0.1",
   "description": "This is shared components library for Next.js projects.",
   "scripts": {
