@@ -39,7 +39,7 @@ You can read the section below to learn how to use these components in your proj
 Custom alert component to display alert message
 
 ```Javascript
-import {Alert} from "@spritz/ui-components"
+import {Alert} from "@activatestudio/ui-components"
 
 <Alert type="success"> I am success alter message </Alert>
 ```
@@ -58,7 +58,7 @@ import {Alert} from "@spritz/ui-components"
 Custom badge component to display badge
 
 ```Javascript
-import {Badge} from "@spritz/ui-components"
+import {Badge} from "@activatestudio/ui-components"
 
 <Badge type="success"> I am success alter message </Alert>
 ```
@@ -77,7 +77,7 @@ import {Badge} from "@spritz/ui-components"
 Custom shadow component to display box with shadow
 
 ```Javascript
-import {BoxShadow} from "@spritz/ui-components"
+import {BoxShadow} from "@activatestudio/ui-components"
 
 <BoxShadow> I am success alter message </BoxShadow>
 ```
@@ -96,7 +96,7 @@ import {BoxShadow} from "@spritz/ui-components"
 Logo with brand name
 
 ```Javascript
-import {Brand} from "@spritz/ui-components"
+import {Brand} from "@activatestudio/ui-components"
 
 <Brand svg="https://dev.w3.org/SVG/tools/svgweb/samples/svg-files/acid.svg" />
 ```
@@ -115,7 +115,7 @@ import {Brand} from "@spritz/ui-components"
 React button
 
 ```Javascript
-import {Button} from "@spritz/ui-components"
+import {Button} from "@activatestudio/ui-components"
 
 <Button type="button"> Click me </Button>
 ```
@@ -141,7 +141,7 @@ import {Button} from "@spritz/ui-components"
 React Day selector button
 
 ```Javascript
-import {DaySelector} from "@spritz/ui-components"
+import {DaySelector} from "@activatestudio/ui-components"
 
 <DaySelector letter="M" selected={true} onClick={()=>{console.log("clicked")}} />
 ```
@@ -165,7 +165,7 @@ React redux form checkbox element
 
 ```Javascript
 import { Field, reduxForm } from 'redux-form';
-import {Checkbox} from "@spritz/ui-components"
+import {Checkbox} from "@activatestudio/ui-components"
 
 const ReduxForm: FunctionComponent<any> = (props)=>{
 return (
