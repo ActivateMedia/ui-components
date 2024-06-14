@@ -13,7 +13,7 @@ interface ParagraphProps {
  * @returns
  */
 const Paragraph: FunctionComponent<ParagraphProps> = (props) => {
-  const { children, className } = props;
+  const { children, className = 'font-medium text-xl' } = props;
   return <p className={mergeCls([className])}>{children}</p>;
 };
 

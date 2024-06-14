@@ -21,7 +21,7 @@ interface IFloatingInput {
 
 const FloatingInput: FunctionComponent<IFloatingInput> = ({
   input,
-  className,
+  className = 'w-full h-10 text-base text-gray-600 border-0 border-b border-gray-300',
   label,
   dataType,
   meta: { touched, error },

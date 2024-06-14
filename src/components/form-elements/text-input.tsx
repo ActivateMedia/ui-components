@@ -21,7 +21,7 @@ interface ITextInput {
 
 const TextInput: FunctionComponent<ITextInput> = ({
   input,
-  className,
+  className = 'border border-black rounded-md p-2 mb-5',
   leftIconClass,
   rightIconClass,
   rightIcon,
