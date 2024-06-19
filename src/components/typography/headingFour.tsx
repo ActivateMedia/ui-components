@@ -13,7 +13,7 @@ interface HeadingProps {
  * @returns
  */
 const HeadingFour: FunctionComponent<HeadingProps> = (props) => {
-  const { children, className } = props;
+  const { children, className = 'text-base font-medium' } = props;
   return <h4 className={mergeCls([className])}>{children}</h4>;
 };
 

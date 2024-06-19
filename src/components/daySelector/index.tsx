@@ -10,7 +10,7 @@ interface DaySelectorProps {
 
 const Index: React.FunctionComponent<DaySelectorProps> = ({
   letter,
-  className,
+  className = 'w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold cursor-pointer',
   selected,
   onClick
 }) => {

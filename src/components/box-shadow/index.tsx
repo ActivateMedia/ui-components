@@ -7,7 +7,7 @@ interface BoxShadowProps {
 }
 
 const BoxShadow: FunctionComponent<BoxShadowProps> = ({
-  className,
+  className = 'shadow-100 h-60 w-1/2',
   children
 }) => {
   return <div className={mergeCls([className])}>{children}</div>;

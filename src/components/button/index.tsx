@@ -28,7 +28,7 @@ const Index: FunctionComponent<ButtonProps> = ({
   iconColor,
   type = 'button',
   disabled = false,
-  className = 'px-1 py-1 text-center',
+  className = 'px-1 py-1 text-center bg-primary-900 rounded-md text-white',
   id = `id-${Math.random()}-${Math.random()}`,
   onClick = () => void 0
 }) => {
