@@ -55,4 +55,6 @@ export const Tabs: React.FC<any> = ({ ulClass, tabClass, children }) => {
   );
 };
 
-export default Tabs;
+export const Tab: React.FC<TabProps> = ({ children }) => {
+  return <>{children}</>;
+};
