@@ -2,7 +2,6 @@ import React, { FunctionComponent } from 'react';
 import Button from '../../components/button';
 import HeadingFive from '../../components/typography/headingFive';
 import Paragraph from '../../components/typography/paragraph';
-
 import InlineSvg from '../../components/inline-svg';
 import { mergeCls } from '../../utils/helper';
 
@@ -14,6 +13,8 @@ interface IProps {
   cancelBtnText?: string;
   onClickCancel: () => any;
   onClickSuccess: () => any;
+  closeSvg: string;
+  className?: string;
 }
 const ConfirmationModal: FunctionComponent<IProps> = ({
   height,
@@ -22,12 +23,17 @@ const ConfirmationModal: FunctionComponent<IProps> = ({
   successBtnText,
   cancelBtnText,
   onClickCancel,
-  onClickSuccess
+  onClickSuccess,
+  closeSvg,
+  className
 }) => {
   return (
     <div className="fixed top-0 left-0 min-h-screen z-20 w-full flex justify-center items-center bg-gray-900 bg-opacity-50">
       <div
-        className={`shadow-300 h-[${height}px] w-[600px] bg-light-100 text-center rounded-xl z-30`}
+        className={mergeCls([
+          className,
+          `shadow-300 h-[${height}px] w-[600px] bg-light-100 text-center rounded-xl z-30`
+        ])}
       >
         <div className="border-b flex justify-between p-6 w-full">
           <HeadingFive className="text-base font-bold text-left">
@@ -35,7 +41,7 @@ const ConfirmationModal: FunctionComponent<IProps> = ({
           </HeadingFive>
           <InlineSvg
             className={mergeCls(['text-center cursor-pointer'])}
-            src="/assets/svg/closeSmall.svg"
+            src={closeSvg}
             width={24}
             height={24}
             onClick={onClickCancel}

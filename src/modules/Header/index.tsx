@@ -1,89 +1,54 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Dialog, Disclosure, Popover } from '@headlessui/react';
-import { connect, useStore } from 'react-redux';
-import { withRouter } from 'next/router';
-import { useTranslation } from 'next-i18next';
-import navMenu from '../../utils/nav-menu.json';
 import Button from '../../components/button';
 import InlineSvg from '../../components/inline-svg';
 import { mergeCls } from '../../utils/helper';
 import Brand from '../../components/brand/index';
 
 interface IProps {
-  tokens: string;
-  router: string;
-  selectedOrdId: string;
+  token: string;
+  router: any;
+  selectedOrgId: string;
+  activeItem: any;
+  logoutBtnHandler?: () => any;
+  menuClickHandler: (item: any) => any;
+  logoClickHandler: () => any;
+  afterLoginMenu: any;
+  beforeLoginMenu: any;
+  individualLoginMenu: any;
+  brandSvg: any;
+  barsSvg: any;
+  xMarkSvg: any;
+  arrowSvg: any;
+  withRouter: any;
+  SETTING_HEADING?: any;
 }
 
-const Index = (props: any) => {
-  const { t } = useTranslation('common');
-  const { token, router, selectedOrgId } = props;
-  const store: any = useStore();
-  const { afterLogin, beforeLogin, individualLogin } = navMenu;
+const Index = ({
+  token,
+  router,
+  selectedOrgId,
+  activeItem,
+  logoutBtnHandler,
+  logoClickHandler,
+  menuClickHandler,
+  afterLoginMenu,
+  beforeLoginMenu,
+  individualLoginMenu,
+  brandSvg,
+  barsSvg,
+  xMarkSvg,
+  arrowSvg,
+  SETTING_HEADING
+}: IProps) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [activeItem, setActiveItem] = useState('');
 
-  let navigation = beforeLogin;
+  let navigation = beforeLoginMenu;
   if (token && selectedOrgId !== 'individual') {
-    navigation = afterLogin;
+    navigation = afterLoginMenu;
   } else if (token) {
-    navigation = individualLogin;
+    navigation = individualLoginMenu;
   }
-
-  const logoutBtnHandler = () => {
-    store.__persistor.purge();
-    localStorage.clear();
-    window.location.reload();
-    router.push('/');
-  };
-
-  useEffect(() => {
-    const currentPath = router.pathname;
-    if (currentPath.includes('dashboard')) {
-      setActiveItem('documents');
-    } else if (currentPath.includes('settings')) {
-      setActiveItem('settings');
-    } else if (currentPath.includes('logout')) {
-      setActiveItem('/');
-    }
-  }, [router, setActiveItem]);
-
-  function menuClickHandler(menu: string) {
-    switch (menu) {
-      case 'logout': {
-        logoutBtnHandler();
-        break;
-      }
-      case 'settings': {
-        router.push(`/${menu}/${selectedOrgId}`);
-        break;
-      }
-      case 'documents': {
-        if (selectedOrgId === 'individual') {
-          router.push(`/dashboard`);
-        } else {
-          router.push(`/dashboard/${selectedOrgId}`);
-        }
-        break;
-      }
-      default: {
-        router.push('/');
-      }
-    }
-    setActiveItem(menu);
-  }
-
-  const logoClickHandler = () => {
-    if (token) {
-      if (selectedOrgId === 'individual') {
-        router.push(`/dashboard`);
-      } else {
-        router.push(`/dashboard/${selectedOrgId}`);
-      }
-    } else {
-      router.push('/');
-    }
-  };
 
   return (
     <header className="header z-1">
@@ -92,7 +57,7 @@ const Index = (props: any) => {
         aria-label="Global"
       >
         <div className="flex items-center justify-center">
-          <Brand clickHandler={logoClickHandler} />
+          <Brand clickHandler={logoClickHandler} svg={brandSvg} />
         </div>
         <div className="flex lg:hidden">
           <button
@@ -102,7 +67,7 @@ const Index = (props: any) => {
           >
             <InlineSvg
               className="text-center"
-              src="/assets/svg/bars3.svg"
+              src={barsSvg}
               width={25}
               height={25}
             />
@@ -141,7 +106,7 @@ const Index = (props: any) => {
         <div className="fixed inset-0 z-10" />
         <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-light-200 px-5 sm:max-w-sm sm:ring-1 sm:ring-dark-900/10">
           <div className="flex items-center justify-between mb-16 h-12">
-            <Brand />
+            <Brand svg={brandSvg} />
             <button
               type="button"
               className="-m-2.5 rounded-md p-2.5 text-dark-700"
@@ -149,7 +114,7 @@ const Index = (props: any) => {
             >
               <InlineSvg
                 className="text-center"
-                src="/assets/svg/xmark.svg"
+                src={xMarkSvg}
                 width={25}
                 height={25}
               />
@@ -166,13 +131,13 @@ const Index = (props: any) => {
                           {({ open }) => (
                             <>
                               <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 hover:bg-dark-100">
-                                {t('HEADER.SETTING_HEADING')}
+                                {SETTING_HEADING}
                                 <InlineSvg
                                   className={mergeCls([
                                     open ? 'rotate-180' : '',
                                     'text-center'
                                   ])}
-                                  src="/assets/svg/arrow.svg"
+                                  src={arrowSvg}
                                   width={18}
                                   height={18}
                                 />
@@ -222,10 +187,4 @@ Index.defaultProps = {
   navigation: []
 };
 
-const mapStateToProps = (state: any) => ({
-  token: state.auth.token,
-  user: state.user.user,
-  selectedOrgId: state.organization.selectedOrgId
-});
-
-export default connect(mapStateToProps, null)(withRouter(Index));
+export default Index;

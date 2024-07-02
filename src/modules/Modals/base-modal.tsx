@@ -13,6 +13,7 @@ interface IProps {
   show?: any;
   isModalLoading?: any;
   onCancel: () => any;
+  closeSvg: string;
 }
 
 const BaseModal: FunctionComponent<IProps> = ({
@@ -22,7 +23,8 @@ const BaseModal: FunctionComponent<IProps> = ({
   bodyClass,
   show,
   isModalLoading,
-  onCancel
+  onCancel,
+  closeSvg
 }) => {
   return (
     <Modal
@@ -58,7 +60,7 @@ const BaseModal: FunctionComponent<IProps> = ({
             >
               <InlineSvg
                 className={mergeCls(['cursor-pointer'])}
-                src={`/assets/svg/closeSmall.svg`}
+                src={closeSvg}
                 width={22}
                 height={22}
               />
