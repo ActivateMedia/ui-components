@@ -1,6 +1,6 @@
 {
   "name": "@activatestudio/spritz-ui-components",
-  "version": "0.0.5",
+  "version": "0.1.0",
   "description": "This is shared components library for spritz projects.",
   "scripts": {
     "build": "rollup -c",
@@ -44,7 +44,7 @@
     "postcss": "^8.4.38",
     "prettier": "^3.3.1",
     "react": "^18.3.1",
-    "react-datetime": "^3.2.0", 
+    "react-datetime": "^3.2.0",
     "react-dom": "^18.3.1",
     "rollup": "^4.18.0",
     "rollup-plugin-postcss": "^4.0.2",
