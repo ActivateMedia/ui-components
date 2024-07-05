@@ -128,7 +128,7 @@ const Index = ({
                     <div key={`main-menu-${String(i)}`}>
                       {item.dropDown ? (
                         <Disclosure as="div" className="-mx-3">
-                          {({ open }) => (
+                          {({ open }:any) => (
                             <>
                               <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 hover:bg-dark-100">
                                 {SETTING_HEADING}
