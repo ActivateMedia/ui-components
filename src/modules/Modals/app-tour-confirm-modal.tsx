@@ -11,8 +11,8 @@ interface IProps {
   modalTilte: string;
   modalDescription: string;
   modalInstructionText?: string;
-  CancelBtnText: string;
-  SuccessBtnText: string;
+  cancelBtnText: string;
+  successBtnText: string;
   closeSvg: string;
   className?: any;
 }
@@ -22,8 +22,8 @@ const AppTourConfirmModal: FunctionComponent<IProps> = ({
   modalTilte,
   modalDescription,
   modalInstructionText,
-  CancelBtnText,
-  SuccessBtnText,
+  cancelBtnText,
+  successBtnText,
   closeSvg,
   className
 }) => {
@@ -62,14 +62,14 @@ const AppTourConfirmModal: FunctionComponent<IProps> = ({
                 className="flex-1 rounded-md text-dark-900 border border-dark-900 p-3 px-5 "
                 onClick={onClickCancel}
               >
-                {CancelBtnText}
+                {cancelBtnText}
               </Button>
               <Button
                 type="button"
                 className="flex-1 bg-primary-900 rounded-md text-white p-3"
                 onClick={onClickSuccess}
               >
-                {SuccessBtnText}
+                {successBtnText}
               </Button>
             </div>
           </div>

@@ -10,7 +10,7 @@ interface IProps {
   body: any;
   className?: any;
   bodyClass?: any;
-  show?: any;
+  show: boolean;
   isModalLoading?: any;
   onCancel: () => any;
   closeSvg: string;
