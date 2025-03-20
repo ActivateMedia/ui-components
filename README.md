@@ -39,7 +39,7 @@ You can read the section below to learn how to use these components in your proj
 Custom alert component to display alert message
 
 ```Javascript
-import {Alert} from "@activatestudio/spritz-ui-components"
+import {Alert} from "@activate-spritz-components/spritz-ui-components"
 
 <Alert type="success"> I am success alter message </Alert>
 ```
@@ -123,7 +123,7 @@ import {Button} from "@activatestudio/spritz-ui-components"
 #### Props
 
 | Name                 | Type      | Value                                    | Description                                       |
-| ---------------------| --------- | ---------------------------------------- | ------------------------------------------------- |
+| -------------------- | --------- | ---------------------------------------- | ------------------------------------------------- |
 | type (require)       | String    | "button, submit, and reset"              | Button type                                       |
 | id (optional)        | String    | "Element id"                             | Pass svg url for brand logo                       |
 | children (optional)  | ReactNode | "Html and string"                        | Display content                                   |
@@ -148,12 +148,12 @@ import {DaySelector} from "@activatestudio/spritz-ui-components"
 
 #### Props
 
-| Name                | Type     | Value                                    | Description                 |
-| ------------------- | -------- | ---------------------------------------- | --------------------------- |
-| letter (require)    | String   | "Week first latter"                      | Week first name with badge  |
-| selected (required) | Boolean  | "true/false"                             | Is selected                 |
-| className (optional)| String   | "Css class"                              | Pass class to modify design |
-| onClick (required)  | Function | "onClick={()=>{console.log('clicked')}}" | Handle button on click      |
+| Name                 | Type     | Value                                    | Description                 |
+| -------------------- | -------- | ---------------------------------------- | --------------------------- |
+| letter (require)     | String   | "Week first latter"                      | Week first name with badge  |
+| selected (required)  | Boolean  | "true/false"                             | Is selected                 |
+| className (optional) | String   | "Css class"                              | Pass class to modify design |
+| onClick (required)   | Function | "onClick={()=>{console.log('clicked')}}" | Handle button on click      |
 
 ---
 
@@ -192,16 +192,17 @@ export default reduxForm<any, any, string>({
 
 #### Props
 
-| Name                | Type     | Value                                              | Description                 |
-| ------------------- | -------- | -------------------------------------------------- | --------------------------- |
-| label (require)     | String   | "Checkbox display label"                           | Label of check box          |
-| type (require)      | String   | "checkbox"                                         | Type of checkbox            |
-| name (require)      | String   | "checkbox"                                         | Name of checkbox            |
-| id (optional)       | String   | "id"                                               | Id of checkbox              |
-| className (optional)| String   | "Css class"                                        | Pass class to modify design |
-| onChange (required) | Function | "onChange={(ele: any)=>{console.log(ele.target)}}" | Handle checkbox on change   |
+| Name                 | Type     | Value                                              | Description                 |
+| -------------------- | -------- | -------------------------------------------------- | --------------------------- |
+| label (require)      | String   | "Checkbox display label"                           | Label of check box          |
+| type (require)       | String   | "checkbox"                                         | Type of checkbox            |
+| name (require)       | String   | "checkbox"                                         | Name of checkbox            |
+| id (optional)        | String   | "id"                                               | Id of checkbox              |
+| className (optional) | String   | "Css class"                                        | Pass class to modify design |
+| onChange (required)  | Function | "onChange={(ele: any)=>{console.log(ele.target)}}" | Handle checkbox on change   |
 
 ---
+
 ## DropDown
 
 React redux form Dropdown element
@@ -234,14 +235,14 @@ export default reduxForm<any, any, string>({
 
 #### Props
 
-| Name                  | Type     | Value                                              | Description                 |
-| --------------------- | -------- | -------------------------------------------------- | --------------------------- |
-| label (require)       | String   | "Dropdown display label"                           | Label of dropdown           |
-| classname (require)   | String   | "Css class"                                        | Pass class to modify design |
-| input (require)       | String   | "input"                                            | input for dropdown          |
-| id (optional)         | String   | "id"                                               | Id of dropdown              |
-| className (optionsal) | String   | "Css class"                                        | Pass class to modify design |
-| options (required)    | Array    | "['one', 'two', 'three']"                          | Options for dropdown        |
+| Name                  | Type   | Value                     | Description                 |
+| --------------------- | ------ | ------------------------- | --------------------------- |
+| label (require)       | String | "Dropdown display label"  | Label of dropdown           |
+| classname (require)   | String | "Css class"               | Pass class to modify design |
+| input (require)       | String | "input"                   | input for dropdown          |
+| id (optional)         | String | "id"                      | Id of dropdown              |
+| className (optionsal) | String | "Css class"               | Pass class to modify design |
+| options (required)    | Array  | "['one', 'two', 'three']" | Options for dropdown        |
 
 ---
 
@@ -274,19 +275,19 @@ export default reduxForm<any, any, string>({
 
 #### Props
 
-| Name                        | Type     | Value                                              | Description                         |
-| --------------------------- | -------- | -------------------------------------------------- | ----------------------------------- |
-| placeholder (required)      | String   | "FloatingInput"                                    | Placeholder of FloatingInput        |
-| input (optional)            | String   | "input"                                            | input for FloatingInput             |
-| step (optional)             | String   | "input"                                            | input for FloatingInput             |
-| label (optional)            | String   | "Checkbox display label"                           | Label of FloatingInput              |
-| type (optional)             | String   | "FloatingInput"                                    | Type of FloatingInput               |
-| initianlValue (optional)    | String   | "FloatingInput"                                    | initianlValue of FloatingInput      |
-| id (optional)               | String   | "id"                                               | Id of FloatingInput                 |
-| className (optional)        | String   | "Css class"                                        | Pass class to modify design         |
-| meta (optional)             | Object   | "{touched?: boolean; error?: string;}              | Handle meta tags for floating input |
-| metaError (optional)        | String   | "{touched:false}"                                  | Meta Error for floating input       |
-| min (optional)              | Number   | "input"                                            | Minimun number for FloatingInput    |
+| Name                     | Type   | Value                                 | Description                         |
+| ------------------------ | ------ | ------------------------------------- | ----------------------------------- |
+| placeholder (required)   | String | "FloatingInput"                       | Placeholder of FloatingInput        |
+| input (optional)         | String | "input"                               | input for FloatingInput             |
+| step (optional)          | String | "input"                               | input for FloatingInput             |
+| label (optional)         | String | "Checkbox display label"              | Label of FloatingInput              |
+| type (optional)          | String | "FloatingInput"                       | Type of FloatingInput               |
+| initianlValue (optional) | String | "FloatingInput"                       | initianlValue of FloatingInput      |
+| id (optional)            | String | "id"                                  | Id of FloatingInput                 |
+| className (optional)     | String | "Css class"                           | Pass class to modify design         |
+| meta (optional)          | Object | "{touched?: boolean; error?: string;} | Handle meta tags for floating input |
+| metaError (optional)     | String | "{touched:false}"                     | Meta Error for floating input       |
+| min (optional)           | Number | "input"                               | Minimun number for FloatingInput    |
 
 ---
 
@@ -318,15 +319,15 @@ export default reduxForm<any, any, string>({
 
 #### Props
 
-| Name                        | Type     | Value                                              | Description                         |
-| --------------------------- | -------- | -------------------------------------------------- | ----------------------------------- |
-| input (optional)            | String   | "input"                                            | input for MultiSelect               |
-| dataType (optional)         | String   | "MultiSelect"                                      | Data Type of MultiSelect            |
-| id (optional)               | String   | "id"                                               | Id of MultiSelect                   |
-| className (optional)        | String   | "Css class"                                        | Pass class to modify design         |
-| meta (optional)             | Object   | "{touched?: boolean; error?: string;}              | Handle meta tags for floating input |
-| metaError (optional)        | String   | "{touched:false}"                                  | Meta Error for floating input       |
-| options (optional)          | Array    | "['one', 'two', 'three']"                          | Options for MultiSelect             |
+| Name                 | Type   | Value                                 | Description                         |
+| -------------------- | ------ | ------------------------------------- | ----------------------------------- |
+| input (optional)     | String | "input"                               | input for MultiSelect               |
+| dataType (optional)  | String | "MultiSelect"                         | Data Type of MultiSelect            |
+| id (optional)        | String | "id"                                  | Id of MultiSelect                   |
+| className (optional) | String | "Css class"                           | Pass class to modify design         |
+| meta (optional)      | Object | "{touched?: boolean; error?: string;} | Handle meta tags for floating input |
+| metaError (optional) | String | "{touched:false}"                     | Meta Error for floating input       |
+| options (optional)   | Array  | "['one', 'two', 'three']"             | Options for MultiSelect             |
 
 ---
 
@@ -347,7 +348,7 @@ return (
         labelClass=''
         className=''
         input={'Input of radio'}
-        dataType="radio"     
+        dataType="radio"
       />
    </form>
    )
@@ -363,16 +364,16 @@ export default reduxForm<any, any, string>({
 
 #### Props
 
-| Name                        | Type     | Value                                              | Description                         |
-| --------------------------- | -------- | -------------------------------------------------- | ----------------------------------- |
-| input (required)            | String   | "input"                                            | input for RadioButton               |
-| dataType (required)         | String   | "RadioButton"                                      | Data Type of RadioButton            |
-| id (optional)               | String   | "id"                                               | Id of RadioButton                   |
-| className (required)        | String   | "Css class"                                        | Pass class to modify design         |
-| labelClass (required)       | String   | "Css class"                                        | Pass class to modify design         |
-| label (optional)            | String   | "RadioButton display label"                        | RadioButton of FloatingInput        |
-| meta (optional)             | Object   | "{touched?: boolean; error?: string;}              | Handle meta tags for floating input |
-| metaError (optional)        | String   | "{touched:false}"                                  | Meta Error for floating input       |
+| Name                  | Type   | Value                                 | Description                         |
+| --------------------- | ------ | ------------------------------------- | ----------------------------------- |
+| input (required)      | String | "input"                               | input for RadioButton               |
+| dataType (required)   | String | "RadioButton"                         | Data Type of RadioButton            |
+| id (optional)         | String | "id"                                  | Id of RadioButton                   |
+| className (required)  | String | "Css class"                           | Pass class to modify design         |
+| labelClass (required) | String | "Css class"                           | Pass class to modify design         |
+| label (optional)      | String | "RadioButton display label"           | RadioButton of FloatingInput        |
+| meta (optional)       | Object | "{touched?: boolean; error?: string;} | Handle meta tags for floating input |
+| metaError (optional)  | String | "{touched:false}"                     | Meta Error for floating input       |
 
 ---
 
@@ -409,16 +410,16 @@ export default reduxForm<any, any, string>({
 
 #### Props
 
-| Name                        | Type     | Value                                              | Description                         |
-| --------------------------- | -------- | -------------------------------------------------- | ----------------------------------- |
-| options (required)          | Array    | "[value:'one', label:'two', color:'#0000']"        | Options for search-input            |
-| className (optional)        | String   | "Css class"                                        | Pass class to modify design         |
-| optionClass (optional)      | String   | "Css class"                                        | Pass class to modify design         |
-| panelClass (optional)       | String   | "Css class"                                        | Pass class to modify design         |
-| selectedOption (optional)   | Array    | "[value:'one', label:'two', color:'#0000']"        | Selected options for search-input   |
-| color (optional)            | String   | "#0000"                                            | Pass color to modify design         |
-| setAgentForInput (optional) | Function | "setAgentForInput={(ele: any)=>{console.log(ele.target)}}" | Handle agent for input on change    |
-| onChange (optional)         | Function | "onChange={(ele: any)=>{console.log(ele.target)}}" | Handle search-input on change       |
+| Name                        | Type     | Value                                                      | Description                       |
+| --------------------------- | -------- | ---------------------------------------------------------- | --------------------------------- |
+| options (required)          | Array    | "[value:'one', label:'two', color:'#0000']"                | Options for search-input          |
+| className (optional)        | String   | "Css class"                                                | Pass class to modify design       |
+| optionClass (optional)      | String   | "Css class"                                                | Pass class to modify design       |
+| panelClass (optional)       | String   | "Css class"                                                | Pass class to modify design       |
+| selectedOption (optional)   | Array    | "[value:'one', label:'two', color:'#0000']"                | Selected options for search-input |
+| color (optional)            | String   | "#0000"                                                    | Pass color to modify design       |
+| setAgentForInput (optional) | Function | "setAgentForInput={(ele: any)=>{console.log(ele.target)}}" | Handle agent for input on change  |
+| onChange (optional)         | Function | "onChange={(ele: any)=>{console.log(ele.target)}}"         | Handle search-input on change     |
 
 ---
 
@@ -462,18 +463,18 @@ export default reduxForm<any, any, string>({
 
 #### Props
 
-| Name                        | Type     | Value                                                       | Description                           |
-| --------------------------- | -------- | ------------------------------------------------------------| --------------------------------------|
-| options (required)          | Array    | "[value:'one', label:'two', color:'#0000']"                 | Options for select-filter             |
-| className (optional)        | String   | "Css class"                                                 | Pass class to modify design           |
-| optionClass (optional)      | String   | "Css class"                                                 | Pass class to modify design           |
-| panelClass (optional)       | String   | "Css class"                                                 | Pass class to modify design           |
-| defaultOption (optional)    | String   | "[value:'one']"                                             | Pass default option for select-filter |
-| buttonClass (required)      | String   | "Css class"                                                 | Pass class to modify design           |
-| selectedFilter (required)   | String   | "Select-filter"                                             | Pass selected filter for select-filter|
-| setSelectedFilter (required)| Function | "setSelectedFilter={(ele: any)=>{console.log(ele.target)}}" | Handle selected filter                |
-| applyFilter (required)      | Function | "applyFilter={(ele: any)=>{console.log(ele.target)}}"       | Handle filter on applied Filter       |
-| setClassName (required)     | Function | "setClassName={(ele: any)=>{console.log(ele.target)}}"      | Handle class for select-filter        |
+| Name                         | Type     | Value                                                       | Description                            |
+| ---------------------------- | -------- | ----------------------------------------------------------- | -------------------------------------- |
+| options (required)           | Array    | "[value:'one', label:'two', color:'#0000']"                 | Options for select-filter              |
+| className (optional)         | String   | "Css class"                                                 | Pass class to modify design            |
+| optionClass (optional)       | String   | "Css class"                                                 | Pass class to modify design            |
+| panelClass (optional)        | String   | "Css class"                                                 | Pass class to modify design            |
+| defaultOption (optional)     | String   | "[value:'one']"                                             | Pass default option for select-filter  |
+| buttonClass (required)       | String   | "Css class"                                                 | Pass class to modify design            |
+| selectedFilter (required)    | String   | "Select-filter"                                             | Pass selected filter for select-filter |
+| setSelectedFilter (required) | Function | "setSelectedFilter={(ele: any)=>{console.log(ele.target)}}" | Handle selected filter                 |
+| applyFilter (required)       | Function | "applyFilter={(ele: any)=>{console.log(ele.target)}}"       | Handle filter on applied Filter        |
+| setClassName (required)      | Function | "setClassName={(ele: any)=>{console.log(ele.target)}}"      | Handle class for select-filter         |
 
 ---
 
@@ -512,16 +513,16 @@ export default reduxForm<any, any, string>({
 
 #### Props
 
-| Name                        | Type     | Value                                                       | Description                           |
-| --------------------------- | -------- | ------------------------------------------------------------| --------------------------------------|
-| options (required)          | Array    | "[value:'one', label:'two', color:'#0000']"                 | Options for select-input              |
-| className (optional)        | String   | "Css class"                                                 | Pass class to modify design           |
-| optionClass (optional)      | String   | "Css class"                                                 | Pass class to modify design           |
-| panelClass (optional)       | String   | "Css class"                                                 | Pass class to modify design           |
-| selectedOption (optional)   | String   | "Select-input"                                              | Pass selected option for select-input |
-| setAgentForInput (optional) | Function | "setAgentForInput={(ele: any)=>{console.log(ele.target)}}"  | Handle agent for input                |
-| onChange (optional)         | Function | "onChange={(ele: any)=>{console.log(ele.target)}}"          | Handle select-input on change         |
-| color (optional)            | String   | "#0000"                                                     | Pass color to modify design           |
+| Name                        | Type     | Value                                                      | Description                           |
+| --------------------------- | -------- | ---------------------------------------------------------- | ------------------------------------- |
+| options (required)          | Array    | "[value:'one', label:'two', color:'#0000']"                | Options for select-input              |
+| className (optional)        | String   | "Css class"                                                | Pass class to modify design           |
+| optionClass (optional)      | String   | "Css class"                                                | Pass class to modify design           |
+| panelClass (optional)       | String   | "Css class"                                                | Pass class to modify design           |
+| selectedOption (optional)   | String   | "Select-input"                                             | Pass selected option for select-input |
+| setAgentForInput (optional) | Function | "setAgentForInput={(ele: any)=>{console.log(ele.target)}}" | Handle agent for input                |
+| onChange (optional)         | Function | "onChange={(ele: any)=>{console.log(ele.target)}}"         | Handle select-input on change         |
+| color (optional)            | String   | "#0000"                                                    | Pass color to modify design           |
 
 ---
 
@@ -565,12 +566,12 @@ export default reduxForm<any, any, string>({
 
 #### Props
 
-| Name                        | Type     | Value                                                       | Description                           |
-| --------------------------- | -------- | ------------------------------------------------------------| --------------------------------------|
-| options (required)          | Array    | "[value:'one', label:'two', color:'#0000']"                 | Options for select-input              |
-| optionClass (optional)      | String   | "Css class"                                                 | Pass class to modify design           |
-| panelClass (optional)       | String   | "Css class"                                                 | Pass class to modify design           |
-| onSelect (optional)         | Function | "onSelect={(ele: any)=>{console.log(ele.target)}}"          | Handle select-option on select        |
+| Name                   | Type     | Value                                              | Description                    |
+| ---------------------- | -------- | -------------------------------------------------- | ------------------------------ |
+| options (required)     | Array    | "[value:'one', label:'two', color:'#0000']"        | Options for select-input       |
+| optionClass (optional) | String   | "Css class"                                        | Pass class to modify design    |
+| panelClass (optional)  | String   | "Css class"                                        | Pass class to modify design    |
+| onSelect (optional)    | Function | "onSelect={(ele: any)=>{console.log(ele.target)}}" | Handle select-option on select |
 
 ---
 
@@ -600,16 +601,16 @@ export default reduxForm<any, any, string>({
 
 #### Props
 
-| Name                        | Type     | Value                                              | Description                  |
-| --------------------------- | -------- | -------------------------------------------------- | ---------------------------  |
-| input (optional)            | String   | "input"                                            | input for Select             |
-| options (optional)          | Array    | "[value:'one', label:'two', color:'#0000']"        | Options for select           |
-| label (optional)            | String   | "Select display label"                             | Label of Select              |
-| dataType (optional)         | String   | "Select"                                           | Data Type of Select          |
-| id (optional)               | String   | "id"                                               | Id of Select                 |
-| className (optional)        | String   | "Css class"                                        | Pass class to modify design  |
-| meta (optional)             | Object   | "{touched?: boolean; error?: string;}              | Handle meta tags for select  |
-| metaError (optional)        | String   | "{touched:false}"                                  | Meta Error for select        |
+| Name                 | Type   | Value                                       | Description                 |
+| -------------------- | ------ | ------------------------------------------- | --------------------------- |
+| input (optional)     | String | "input"                                     | input for Select            |
+| options (optional)   | Array  | "[value:'one', label:'two', color:'#0000']" | Options for select          |
+| label (optional)     | String | "Select display label"                      | Label of Select             |
+| dataType (optional)  | String | "Select"                                    | Data Type of Select         |
+| id (optional)        | String | "id"                                        | Id of Select                |
+| className (optional) | String | "Css class"                                 | Pass class to modify design |
+| meta (optional)      | Object | "{touched?: boolean; error?: string;}       | Handle meta tags for select |
+| metaError (optional) | String | "{touched:false}"                           | Meta Error for select       |
 
 ---
 
@@ -639,18 +640,18 @@ export default reduxForm<any, any, string>({
 
 #### Props
 
-| Name                        | Type     | Value                                              | Description                  |
-| --------------------------- | -------- | -------------------------------------------------- | ---------------------------  |
-| input (optional)            | String   | "input"                                            | input for Select             |
-| label (optional)            | String   | "Select display label"                             | Label of Select              |
-| dataType (optional)         | String   | "Select"                                           | Data Type of Select          |
-| id (optional)               | String   | "id"                                               | Id of Select                 |
-| className (optional)        | String   | "Css class"                                        | Pass class to modify design  |
-| meta (optional)             | Object   | "{touched?: boolean; error?: string;}              | Handle meta tags for select  |
-| metaError (optional)        | String   | "{touched:false}"                                  | Meta Error for select        |
-| placeholder (optional)      | String   | "TextArea"                                         | Placeholder of TextArea      |
-| row (optional)              | Number   | "1"                                                | Number of rows for TextArea  |
-| cols (optional)             | Number   | "1"                                                | Number of cols forTextArea   |
+| Name                   | Type   | Value                                 | Description                 |
+| ---------------------- | ------ | ------------------------------------- | --------------------------- |
+| input (optional)       | String | "input"                               | input for Select            |
+| label (optional)       | String | "Select display label"                | Label of Select             |
+| dataType (optional)    | String | "Select"                              | Data Type of Select         |
+| id (optional)          | String | "id"                                  | Id of Select                |
+| className (optional)   | String | "Css class"                           | Pass class to modify design |
+| meta (optional)        | Object | "{touched?: boolean; error?: string;} | Handle meta tags for select |
+| metaError (optional)   | String | "{touched:false}"                     | Meta Error for select       |
+| placeholder (optional) | String | "TextArea"                            | Placeholder of TextArea     |
+| row (optional)         | Number | "1"                                   | Number of rows for TextArea |
+| cols (optional)        | Number | "1"                                   | Number of cols forTextArea  |
 
 ---
 
@@ -680,21 +681,21 @@ export default reduxForm<any, any, string>({
 
 #### Props
 
-| Name                        | Type     | Value                                              | Description                  |
-| --------------------------- | -------- | -------------------------------------------------- | ---------------------------  |
-| input (optional)            | String   | "input"                                            | input for Text-Input         |
-| label (optional)            | String   | "Text-Input display label"                         | Label of Text-Input          |
-| dataType (optional)         | String   | "Text-Input"                                       | Data Type of Text-Input      |
-| id (optional)               | String   | "id"                                               | Id of Text-Input             |
-| className (optional)        | String   | "Css class"                                        | Pass class to modify design  |
-| labelClass (optional)       | String   | "Css class"                                        | Pass class to modify design  |
-| disabled (optional)         | Boolean  | False                                              | Pass boolean to show if text-input disabled or not |
-| leftIconClass (optional)    | String   | "Css class"                                        | Pass class to modify design  |
-| rightIconClass (optional)   | String   | "Css class"                                        | Pass class to modify design  |
-| rightIcon (optional)        | String   | "/rightIcon.svg"                                   | Pass class to modify design  |
-| leftIcon (optional)         | String   | "/leftIcon.svg"                                    | Pass class to modify design  |
-| meta (optional)             | Object   | "{touched?: boolean; error?: string;}              | Handle meta tags for select  |
-| placeholder (optional)      | String   | "TextInput"                                        | Placeholder of TextInput     |
+| Name                      | Type    | Value                                 | Description                                        |
+| ------------------------- | ------- | ------------------------------------- | -------------------------------------------------- |
+| input (optional)          | String  | "input"                               | input for Text-Input                               |
+| label (optional)          | String  | "Text-Input display label"            | Label of Text-Input                                |
+| dataType (optional)       | String  | "Text-Input"                          | Data Type of Text-Input                            |
+| id (optional)             | String  | "id"                                  | Id of Text-Input                                   |
+| className (optional)      | String  | "Css class"                           | Pass class to modify design                        |
+| labelClass (optional)     | String  | "Css class"                           | Pass class to modify design                        |
+| disabled (optional)       | Boolean | False                                 | Pass boolean to show if text-input disabled or not |
+| leftIconClass (optional)  | String  | "Css class"                           | Pass class to modify design                        |
+| rightIconClass (optional) | String  | "Css class"                           | Pass class to modify design                        |
+| rightIcon (optional)      | String  | "/rightIcon.svg"                      | Pass class to modify design                        |
+| leftIcon (optional)       | String  | "/leftIcon.svg"                       | Pass class to modify design                        |
+| meta (optional)           | Object  | "{touched?: boolean; error?: string;} | Handle meta tags for select                        |
+| placeholder (optional)    | String  | "TextInput"                           | Placeholder of TextInput                           |
 
 ---
 
@@ -724,19 +725,18 @@ export default reduxForm<any, any, string>({
 
 #### Props
 
-| Name                        | Type     | Value                                              | Description                  |
-| --------------------------- | -------- | -------------------------------------------------- | ---------------------------  |
-| input (optional)            | String   | "input"                                            | input for Text-Input         |
-| label (optional)            | String   | "Text-Input display label"                         | Label of Text-Input          |
-| dataType (optional)         | String   | "Text-Input"                                       | Data Type of Text-Input      |
-| className (optional)        | String   | "Css class"                                        | Pass class to modify design  |
-| meta (optional)             | Object   | "{touched?: boolean; error?: string;}              | Handle meta tags for toggle  |
-| metaError (optional)        | String   | "{touched:false}"                                  | Meta Error for toggle        |
+| Name                 | Type   | Value                                 | Description                 |
+| -------------------- | ------ | ------------------------------------- | --------------------------- |
+| input (optional)     | String | "input"                               | input for Text-Input        |
+| label (optional)     | String | "Text-Input display label"            | Label of Text-Input         |
+| dataType (optional)  | String | "Text-Input"                          | Data Type of Text-Input     |
+| className (optional) | String | "Css class"                           | Pass class to modify design |
+| meta (optional)      | Object | "{touched?: boolean; error?: string;} | Handle meta tags for toggle |
+| metaError (optional) | String | "{touched:false}"                     | Meta Error for toggle       |
 
 ---
 
 # Components
-
 
 ## InfiniteScroll
 
@@ -750,14 +750,14 @@ import {InfiniteScroll} from "@activatestudio/spritz-ui-components"
 
 #### Props
 
-| Name                  | Type      | Value                                              | Description                                        |
-| --------------------- | --------- | -------------------------------------------------- | ---------------------------------------------------|
-| loader (require)      | ReactNode | "<p className="text-center">Loading...</p>"        | Pass loading context                               |
-| children (required)   | ReactNode | "React components"                                 | Pass react node to display in box                  |
-| fetchData (require)   | Function  | "fetchData={(ele: any)=>{console.log(ele.target)}}"| Handle fetching data for infinite scroll on change |
-| hasmore (optional)    | Boolean   | "True"                                             | Boolean value for data                             |
-| endMessage (optional) | ReactNode |  "<p className="text-center">End Message</p>"      | Pass end message context                           |
-| className (optional)  | String    | "Css class"                                        | Pass class to modify design                        |
+| Name                  | Type      | Value                                               | Description                                        |
+| --------------------- | --------- | --------------------------------------------------- | -------------------------------------------------- |
+| loader (require)      | ReactNode | "<p className="text-center">Loading...</p>"         | Pass loading context                               |
+| children (required)   | ReactNode | "React components"                                  | Pass react node to display in box                  |
+| fetchData (require)   | Function  | "fetchData={(ele: any)=>{console.log(ele.target)}}" | Handle fetching data for infinite scroll on change |
+| hasmore (optional)    | Boolean   | "True"                                              | Boolean value for data                             |
+| endMessage (optional) | ReactNode | "<p className="text-center">End Message</p>"        | Pass end message context                           |
+| className (optional)  | String    | "Css class"                                         | Pass class to modify design                        |
 
 ---
 
@@ -772,13 +772,14 @@ import {InlineSvg} from "@activatestudio/spritz-ui-components"
 ```
 
 #### Props
-| Name                 | Type    | Value                                    | Description                 |
-| ---------------------| --------| -----------------------------------------| ----------------------------|
-| src (require)        | String  | "/assets/svg/brand"                      | Pass source file of svg     |
-| height (optional)    | Number  | 200                                      | Pass height of the svg      |
-| width (optional)     | Number  | 300                                      | Pass width of the svg       |
-| className (optional) | String  | "Css class"                              | Pass class to modify design |
-| onClick (optional)   | Function| "onClick={()=>{console.log('clicked')}}" | Handle svg on click         |
+
+| Name                 | Type     | Value                                    | Description                 |
+| -------------------- | -------- | ---------------------------------------- | --------------------------- |
+| src (require)        | String   | "/assets/svg/brand"                      | Pass source file of svg     |
+| height (optional)    | Number   | 200                                      | Pass height of the svg      |
+| width (optional)     | Number   | 300                                      | Pass width of the svg       |
+| className (optional) | String   | "Css class"                              | Pass class to modify design |
+| onClick (optional)   | Function | "onClick={()=>{console.log('clicked')}}" | Handle svg on click         |
 
 ---
 
@@ -791,7 +792,9 @@ import {Shimmer} from "@activatestudio/spritz-ui-components"
 
 <Shimmer/>
 ```
+
 ---
+
 ## Document Shimmer
 
 React Document Shimmer Component
@@ -801,7 +804,9 @@ import {DocumentShimmer} from "@activatestudio/spritz-ui-components"
 
 <DocumentShimmer/>
 ```
+
 ---
+
 ## Modal Shimmer
 
 React Modal Shimmer Component
@@ -811,7 +816,9 @@ import {ModalShimmer} from "@activatestudio/spritz-ui-components"
 
 <ModalShimmer/>
 ```
+
 ---
+
 ## Queue Shimmer
 
 React Queue Shimmer Component
@@ -821,7 +828,9 @@ import {QueueShimmer} from "@activatestudio/spritz-ui-components"
 
 <QueueShimmer/>
 ```
+
 ---
+
 ## SideBar Shimmer
 
 React SideBar Shimmer Component
@@ -831,8 +840,8 @@ import {SideBarShimmer} from "@activatestudio/spritz-ui-components"
 
 <SideBarShimmer/>
 ```
----
 
+---
 
 ## ShowMore
 
@@ -845,12 +854,13 @@ import {ShowMore} from "@activatestudio/spritz-ui-components"
 ```
 
 #### Props
-| Name                      | Type    | Value              | Description                     |
-| ------------------------- | --------| -------------------| --------------------------------|
-| color (optional)          | String  | "#0000"            | Pass color for SVG              |
-| toggleShowMore (optional) | Boolean | True               | Pass boolean value for toggling |
-| itemsLeft (optional)      | Number  | 1                  | Pass number of items are left   |
-| className (optional)      | String  | "Css class"        | Pass class to modify design     |
+
+| Name                      | Type    | Value       | Description                     |
+| ------------------------- | ------- | ----------- | ------------------------------- |
+| color (optional)          | String  | "#0000"     | Pass color for SVG              |
+| toggleShowMore (optional) | Boolean | True        | Pass boolean value for toggling |
+| itemsLeft (optional)      | Number  | 1           | Pass number of items are left   |
+| className (optional)      | String  | "Css class" | Pass class to modify design     |
 
 ---
 
@@ -865,12 +875,14 @@ import {Tabs} from "@activatestudio/spritz-ui-components"
 ```
 
 #### Props
-| Name                  | Type      | Value                | Description                       |
-| --------------------- | ----------| ---------------------| ----------------------------------|
-| label (require)       | String    | "Tabs display label" | Label of Tabs                     |
-| children (required)   | ReactNode | "React components"   | Pass react node to display in box |
+
+| Name                | Type      | Value                | Description                       |
+| ------------------- | --------- | -------------------- | --------------------------------- |
+| label (require)     | String    | "Tabs display label" | Label of Tabs                     |
+| children (required) | ReactNode | "React components"   | Pass react node to display in box |
 
 ---
+
 ## Tooltip
 
 React Tooltip Component
@@ -882,11 +894,12 @@ import {Tooltip} from "@activatestudio/spritz-ui-components"
 ```
 
 #### Props
-| Name                  | Type      | Value                | Description                       |
-| --------------------- | ----------| ---------------------| ----------------------------------|
-| title (optional)      | String    | "Tootltip"           | Title of Tooltip                  |
-| children (required)   | ReactNode | "React components"   | Pass react node to display in box |
-| className (optional)  | String    | "Css class"          | Pass class to modify design       |
+
+| Name                 | Type      | Value              | Description                       |
+| -------------------- | --------- | ------------------ | --------------------------------- |
+| title (optional)     | String    | "Tootltip"         | Title of Tooltip                  |
+| children (required)  | ReactNode | "React components" | Pass react node to display in box |
+| className (optional) | String    | "Css class"        | Pass class to modify design       |
 
 ---
 
@@ -906,26 +919,31 @@ import {HeadingOne,HeadingTwo,HeadingThree,HeadingFour,
 <HeadingSix>{children}</HeadingSix>
 <Paragraph>{children}</Paragraph>
 ```
+
 #### Props
-| Name                  | Type      | Value                | Description                       |
-| --------------------- | ----------| ---------------------| ----------------------------------|
-| children (required)   | ReactNode | "React components"   | Pass react node to display in box |
-| className (optional)  | String    | "Css class"          | Pass class to modify design       |
+
+| Name                 | Type      | Value              | Description                       |
+| -------------------- | --------- | ------------------ | --------------------------------- |
+| children (required)  | ReactNode | "React components" | Pass react node to display in box |
+| className (optional) | String    | "Css class"        | Pass class to modify design       |
 
 ---
 
 ## PreParagraph
 
 React PreParagraph component
+
 ```Javascript
 import {PreParagraph} from "@activatestudio/spritz-ui-components"
 
 <PreParagraph>{content}</PreParagraph>
 ```
+
 #### Props
-| Name                 | Type      | Value                | Description                       |
-| -------------------- | ----------| ---------------------| ----------------------------------|
-| content (required)   | ReactNode | "React components"   | Pass react node to display in box |
+
+| Name               | Type      | Value              | Description                       |
+| ------------------ | --------- | ------------------ | --------------------------------- |
+| content (required) | ReactNode | "React components" | Pass react node to display in box |
 
 ---
 
@@ -952,14 +970,14 @@ import {AppTourConfirmModal} from "@activatestudio/spritz-ui-components"
 #### Props
 
 | Name                            | Type     | Value                                                   | Description                                          |
-| ------------------------------- | ---------| --------------------------------------------------------| -----------------------------------------------------|
+| ------------------------------- | -------- | ------------------------------------------------------- | ---------------------------------------------------- |
 | modalTitle (required)           | String   | "AppTourConfirmModal"                                   | Pass modal title for app tour confirm modal          |
 | modalDescription (required)     | String   | "Add To AppTourConfirmModal"                            | Pass modal description for app tour confirm modal    |
 | successBtnText (required)       | String   | "Success"                                               | Pass text for success button                         |
 | cancelBtnText (required)        | String   | "Cancel"                                                | Pass text for cancel button                          |
 | onClickSuccess (required)       | Function | "onClickSuccess={() => console.log('clicked success')}" | Pass function to handle success button               |
 | onClickCancel (required)        | Function | "onClickCancel={() => console.log('clicked cancel')}"   | Pass function to handle cancel button                |
-| closeSvg (required)             | String   | "/assets/svg/closeSmall.svg"                            | Pass close icon svg url                             |
+| closeSvg (required)             | String   | "/assets/svg/closeSmall.svg"                            | Pass close icon svg url                              |
 | modalInstructionText (optional) | String   | "Instruction message"                                   | modal instruction message for app tour confirm modal |
 | className (optional)            | String   | "Css class"                                             | Pass class to modify design                          |
 
@@ -984,16 +1002,15 @@ import {BaseModal} from "@activatestudio/spritz-ui-components"
 #### Props
 
 | Name                      | Type      | Value                                            | Description                                      |
-| ------------------------- | --------- | -------------------------------------------------| -------------------------------------------------|
-| heading (required)        | String    | "Base Modal"                                     | Pass heading for base-modal                      | 
+| ------------------------- | --------- | ------------------------------------------------ | ------------------------------------------------ |
+| heading (required)        | String    | "Base Modal"                                     | Pass heading for base-modal                      |
 | body (required)           | ReactNode | "React components"                               | Pass react node to display in box                |
 | show (required)           | Boolean   | "True"                                           | Pass boolean value to show/hide base modal       |
 | onCancel (required)       | Function  | "onCancel={() => console.log('clicked cancel')}" | Pass function to handle cancel button            |
-| closeSvg (required)       | String    | "/assets/svg/closeSmall.svg"                     | Pass close icon svg url                         |
+| closeSvg (required)       | String    | "/assets/svg/closeSmall.svg"                     | Pass close icon svg url                          |
 | isModalLoading (required) | Boolean   | "True"                                           | Pass boolean value to determine if modal loading |
 | className (optional)      | String    | "Css class"                                      | Pass class to modify design                      |
 | bodyClass (optional)      | String    | "Css class"                                      | Pass class to modify design                      |
-
 
 ---
 
@@ -1018,20 +1035,21 @@ import {ConfirmationModal} from "@activatestudio/spritz-ui-components"
 #### Props
 
 | Name                      | Type     | Value                                                   | Description                            |
-| ------------------------- | -------- | --------------------------------------------------------| ---------------------------------------|
+| ------------------------- | -------- | ------------------------------------------------------- | -------------------------------------- |
 | title (required)          | String   | "Confirmation Modal"                                    | Pass title for confirmation-modal      |
 | subTitle (required)       | String   | "Add to confimation modal"                              | Pass subtitle of confirmation-modal    |
 | successBtnText (required) | String   | "Success"                                               | Pass text for success button           |
 | cancelBtnText (required)  | String   | "Cancel"                                                | Pass text for cancel button            |
 | onClickSuccess (required) | Function | "onClickSuccess={() => console.log('clicked success')}" | Pass function to handle success button |
 | onClickCancel (required)  | Function | "onClickCancel={() => console.log('clicked cancel')}"   | Pass function to handle cancel button  |
-| closeSvg (required)       | String   | "/assets/svg/closeSmall.svg"                            | Pass close icon svg url               |
+| closeSvg (required)       | String   | "/assets/svg/closeSmall.svg"                            | Pass close icon svg url                |
 | height (optional)         | Number   | "400"                                                   | Pass height for the confirmation modal |
 | className (optional)      | String   | "Css class"                                             | Pass class to modify design            |
 
 ---
 
 ## Header
+
 React Header Module
 
 ```Javascript
@@ -1058,7 +1076,7 @@ import {Header} from "@activatestudio/spritz-ui-components"
 #### Props
 
 | Name                           | Type     | Value                                      | Description                                          |
-| ------------------------------ | ---------| -------------------------------------------| -----------------------------------------------------|
+| ------------------------------ | -------- | ------------------------------------------ | ---------------------------------------------------- |
 | token (required)               | String   | "user token"                               | Pass user token                                      |
 | router (required)              | String   | "Router path"                              | Pass router path                                     |
 | selectedOrgId (required)       | String   | "Home"                                     | Pass selected Org for Header                         |
