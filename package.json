@@ -1,5 +1,5 @@
 {
-  "name": "@activatestudio/spritz-ui-components",
+  "name": "@activate-spritz-components/spritz-ui-components",
   "version": "0.1.3",
   "description": "This is shared components library for spritz projects.",
   "scripts": {
