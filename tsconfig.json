@@ -17,5 +17,5 @@
     "declarationDir": "dist/types",
     "outDir": "dist"
   },
-  "include": ["src"]
+  "include": ["src","global.d.ts"]
 }

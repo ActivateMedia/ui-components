@@ -3,6 +3,7 @@ const resolve = require('@rollup/plugin-node-resolve');
 const commonjs = require('@rollup/plugin-commonjs');
 const postcss = require('rollup-plugin-postcss');
 const terser = require('@rollup/plugin-terser');
+const image = require('@rollup/plugin-image');
 
 module.exports = [
   {
@@ -38,8 +39,9 @@ module.exports = [
           ]
         ]
       }),
-      terser()
+      terser(),
+      image()
     ],
-    external: ['react', 'react-dom']
+    external: ['react', 'react-dom', 'react-inlinesvg']
   }
 ];
