@@ -1,5 +1,6 @@
-import { FunctionComponent } from 'react';
+import React, { FunctionComponent } from 'react';
 import SVG from 'react-inlinesvg';
+import svgMap from './svgMap';
 import { Props as SVGProps } from 'react-inlinesvg';
 
 export type SvgPros = SVGProps & {
@@ -10,16 +11,14 @@ export type SvgPros = SVGProps & {
   onClick?: (e: any) => void;
 };
 
-/**
- * Handle inline SVG with dynamic path/url.
- * (Note: Used to handle dynamic external/internal SVG assets)
- * @example <InlineSvg src="/assets/path/to/your.svg" size={32} />
- * @see https://www.npmjs.com/package/react-inlinesvg
- */
 const Index: FunctionComponent<SvgPros> = (props) => {
-  const { src, ...svgProps } = props;
+  // Extract the file name from the src path
+  const fileName = props.src.split('/').pop() || ''; // Fallback to empty string if undefined
 
-  return <SVG {...svgProps} src={src} />;
+  // Look up the SVG in the map
+  const svgSrc = svgMap[fileName] || '';
+  const { ...svgProps } = props;
+  return <SVG {...svgProps} src={svgSrc} />;
 };
 
 Index.defaultProps = {
