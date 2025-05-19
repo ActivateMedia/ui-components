@@ -55,7 +55,7 @@ const SearchInput: FunctionComponent<SearchInputProps> = ({
   }, [isOpen]);
 
   const handleToggleDropdown = () => {
-    if (options.length > 1) {
+    if (options.length > 0) {
       setIsOpen(true);
       setSearchInput('');
     }
@@ -86,7 +86,7 @@ const SearchInput: FunctionComponent<SearchInputProps> = ({
             className={mergeCls(
               className,
               'z-10 rounded-md text-left flex items-center',
-              options.length === 1 && 'cursor-default'
+              options.length === 0 && 'cursor-default'
             )}
             onClick={isOpen ? undefined : handleToggleDropdown}
           >
@@ -124,7 +124,7 @@ const SearchInput: FunctionComponent<SearchInputProps> = ({
                 </span>
               )}
             </span>
-            {options.length > 1 && (
+            {options.length > 0 && (
               <InlineSvg
                 className={mergeCls([
                   isOpen ? 'rotate-180' : '',
@@ -138,7 +138,7 @@ const SearchInput: FunctionComponent<SearchInputProps> = ({
               />
             )}
           </button>
-          {isOpen && options.length > 1 && (
+          {isOpen && options.length > 0 && (
             <div className="absolute mt-2 w-full rounded-md shadow-lg z-[100]">
               <SelectOption
                 options={filteredOptions}
