@@ -1094,3 +1094,54 @@ import {Header} from "@activatestudio/spritz-ui-components"
 | SETTING_HEADING (optional)     | String   | "Setting Heading"                          | Pass setting heading                                 |
 
 ---
+
+CustomCalendar
+React Custom Calendar component built on top of react-calendar with enhanced styling, formatting, and customization options.
+
+```Javascript
+import CustomCalendar from './CustomCalendar';
+
+<CustomCalendar
+  value={new Date()}
+  containerClassName="rounded-md shadow-md"
+  todayClassName="bg-green-500 text-white"
+  dayStyle={(date) => ({ borderRadius: '4px' })}
+  tileContent={({ date }) => <span>{date.getDate()}</span>}
+/>
+```
+✅ Props
+
+
+| Name                 | Type                              | Example                                                                    | Description                                                |
+| -------------------- | --------------------------------- | -------------------------------------------------------------------------- | ---------------------------------------------------------- |
+| `value`              | `Date \| Date[]`                  | `new Date()`                                                               | Selected date or range                                     |
+| `onChange`           | `(value: Date \| Date[]) => void` | `(date) => console.log(date)`                                              | Callback when date is changed                              |
+| `containerClassName` | `string`                          | `"rounded shadow bg-white"`                                                | Custom class for the outer container                       |
+| `containerStyle`     | `React.CSSProperties`             | `{ backgroundColor: 'white' }`                                             | Inline styles for the outer container                      |
+| `tileClassName`      | `string \| (props) => string`     | `({ date }) => 'bg-gray-100'`                                              | Class(es) applied to each date tile                        |
+| `tileContent`        | `(props) => React.ReactNode`      | `({ date }) => <span>{date.getDate()}</span>`                              | Custom content for each date tile                          |
+| `dayFormat`          | `(locale, date) => string`        | `(locale, date) => date.toLocaleDateString(locale, { weekday: 'narrow' })` | Custom formatter for weekday labels (defaults to 1-letter) |
+| `dayStyle`           | `(date, view) => CSSProperties`   | `(date, view) => ({ color: 'red' })`                                       | Custom inline styles for individual date tiles             |
+| `todayClassName`     | `string`                          | `"bg-blue-500 text-white"`                                                 | Extra classes added to today's date tile                   |
+| `...rest`            | `ReactCalendarProps`              | `minDate={new Date()}`                                                     | All other props supported by `react-calendar`              |
+
+
+...rest	ReactCalendarProps	All other props from react-calendar	You can pass anything supported by react-calendar
+
+🔧 Example
+```Javascript
+<CustomCalendar
+  value={new Date()}
+  onChange={(val) => console.log(val)}
+  todayClassName="bg-indigo-500 text-white"
+  dayStyle={(date) => ({ padding: '5px', borderRadius: '6px' })}
+  tileContent={({ date }) => {
+    if (date.getDate() === 1) return <span className="text-red-600">*</span>;
+    return null;
+  }}
+/>
+```
+📦 Dependencies
+react-calendar
+
+CSS: import 'react-calendar/dist/Calendar.css';

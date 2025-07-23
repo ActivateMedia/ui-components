@@ -1,6 +1,6 @@
 {
   "name": "@activate-spritz-components/spritz-ui-components",
-  "version": "0.1.7",
+  "version": "0.1.11",
   "description": "This is shared components library for spritz projects.",
   "scripts": {
     "build": "rollup -c",
