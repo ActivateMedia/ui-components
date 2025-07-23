@@ -1,5 +1,8 @@
 import React from 'react';
-import Calendar, { CalendarProps as ReactCalendarProps } from 'react-calendar';
+import Calendar, {
+  CalendarProps as ReactCalendarProps,
+  TileArgs,
+} from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 
 export type CustomCalendarProps = ReactCalendarProps & {
@@ -22,7 +25,7 @@ const CustomCalendar: React.FC<CustomCalendarProps> = ({
   tileContent,
   dayFormat,
   dayStyle,
-  todayClassName = "bg-blue-500 text-white",
+  todayClassName = 'bg-blue-500 text-white',
   ...rest
 }) => {
   // Use one-letter format if client does not specify dayFormat
@@ -30,10 +33,12 @@ const CustomCalendar: React.FC<CustomCalendarProps> = ({
     ? (locale: string | undefined, date: Date) => dayFormat(locale, date)
     : defaultDayFormat;
 
-  // Custom tileClassName to support todayClassName and hover/active/cursor
   const today = new Date();
-  const customTileClassName = (props: Parameters<Exclude<ReactCalendarProps['tileClassName'], undefined>>[0]) => {
-    let classes = "hover:bg-blue-100 active:bg-blue-200 cursor-pointer transition-colors";
+
+  // Custom tileClassName to support todayClassName and hover/active/cursor
+  const customTileClassName = (props: TileArgs): string => {
+    let classes =
+      'hover:bg-blue-100 active:bg-blue-200 cursor-pointer transition-colors';
     if (
       props.date.getDate() === today.getDate() &&
       props.date.getMonth() === today.getMonth() &&
@@ -41,30 +46,39 @@ const CustomCalendar: React.FC<CustomCalendarProps> = ({
     ) {
       classes += ` ${todayClassName}`;
     }
-    if (typeof tileClassName === "function") {
-      classes += " " + tileClassName(props);
+    if (typeof tileClassName === 'function') {
+      classes += ' ' + tileClassName(props);
     }
     return classes.trim();
   };
 
   // Compose tileContent to apply dayStyle if provided
-  const composedTileContent = (props: Parameters<Exclude<ReactCalendarProps['tileContent'], undefined>>[0]) => {
+  const composedTileContent = (props: TileArgs) => {
     const { date, view } = props;
     const style = dayStyle ? dayStyle(date, view) : undefined;
     let userContent: React.ReactNode = undefined;
+
     if (typeof tileContent === 'function') {
       userContent = tileContent(props);
     }
+
     return (
       <div style={style} className="w-full h-full">
-        {userContent !== undefined ? userContent : null}
+        {userContent ?? null}
       </div>
     );
   };
 
   // Only use custom functions if needed
-  const tileClassNameToUse = (dayStyle || typeof tileClassName === 'function') ? customTileClassName : undefined;
-  const tileContentToUse = dayStyle ? composedTileContent : (typeof tileContent === 'function' ? tileContent : undefined);
+  const tileClassNameToUse =
+    typeof tileClassName === 'function' || dayStyle || todayClassName
+      ? customTileClassName
+      : undefined;
+
+  const tileContentToUse =
+    dayStyle || typeof tileContent === 'function'
+      ? composedTileContent
+      : undefined;
 
   return (
     <div className={containerClassName} style={containerStyle}>
