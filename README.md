@@ -1095,8 +1095,185 @@ import {Header} from "@activatestudio/spritz-ui-components"
 
 ---
 
-CustomCalendar
-React Custom Calendar component built on top of react-calendar with enhanced styling, formatting, and customization options.
+## ResponsiveNavbar
+
+A comprehensive, responsive navbar component with built-in hamburger menu functionality. Supports both navigation and action items, with customizable styling and behavior for mobile and desktop views.
+
+```Javascript
+import { ResponsiveNavbar } from "@activate-spritz-components/spritz-ui-components"
+
+const navigationItems = [
+  { 
+    id: 'spritz', 
+    label: 'Spritz', 
+    href: '/spritz',
+    type: 'navigation'
+  },
+  { 
+    id: 'logout', 
+    label: 'Log out', 
+    type: 'action',
+    onClick: () => {
+      console.log('Logout clicked!');
+      // Handle logout logic
+    }
+  }
+];
+
+<ResponsiveNavbar
+  logo={<YourLogo />}
+  rightContent={<UserMenu />}
+  navigationItems={navigationItems}
+  onNavigationItemClick={(item) => console.log('Clicked:', item)}
+  onLogoClick={() => window.location.href = '/'}
+  height={64}
+  mobileHeight={56}
+  backgroundColor="bg-white"
+  borderColor="border-gray-200"
+  shadow={false}
+  showHeader={false}
+  mobileOpenInNewTab={true}
+  desktopOpenInNewTab={false}
+  menuItemTextColor="text-gray-900"
+  menuItemHoverColor="hover:bg-gray-50"
+  menuItemActiveColor="bg-blue-100 text-blue-900"
+/>
+```
+
+#### Props
+
+| Name                    | Type                              | Default                    | Description                                                |
+| ----------------------- | --------------------------------- | -------------------------- | ---------------------------------------------------------- |
+| `id`                    | `string`                          | -                          | Unique identifier for the navbar                           |
+| `className`             | `string`                          | -                          | Additional CSS classes for the navbar                      |
+| `height`                | `number`                          | `64`                       | Height of the navbar in pixels                            |
+| `mobileHeight`          | `number`                          | -                          | Height of the navbar on mobile devices                    |
+| `logo`                  | `ReactNode`                       | -                          | Logo component to display on the left                     |
+| `leftContent`           | `ReactNode`                       | -                          | Additional content to display on the left                 |
+| `rightContent`          | `ReactNode`                       | -                          | Additional content to display on the right                |
+| `children`              | `ReactNode`                       | -                          | Content to display in the center                          |
+| `navigationItems`       | `NavItem[]`                       | `[]`                       | Array of navigation items for the hamburger menu          |
+| `backgroundColor`       | `string`                          | `'bg-white'`               | Background color class for the navbar                     |
+| `borderColor`           | `string`                          | `'border-gray-200'`        | Border color class for the navbar                         |
+| `shadow`                | `boolean`                         | `false`                    | Whether to show shadow on the navbar                      |
+| `hamburgerIcon`         | `ReactNode`                       | -                          | Custom hamburger icon component                           |
+| `showHeader`            | `boolean`                         | `false`                    | Whether to show header in the dropdown/sidebar            |
+| `menuTitle`             | `string`                          | `'Menu'`                   | Title for the menu header                                 |
+| `menuPosition`          | `'left' \| 'right'`              | `'right'`                  | Position of the hamburger menu                            |
+| `menuVariant`           | `'dropdown' \| 'sidebar'`        | `'dropdown'`               | Type of menu (dropdown for desktop, sidebar for mobile)   |
+| `defaultOpenInNewTab`   | `boolean`                         | `false`                    | Default behavior for opening links in new tab             |
+| `mobileOpenInNewTab`    | `boolean`                         | -                          | Whether to open links in new tab on mobile               |
+| `desktopOpenInNewTab`   | `boolean`                         | -                          | Whether to open links in new tab on desktop              |
+| `menuBackgroundColor`   | `string`                          | `'bg-white'`               | Background color for the menu                             |
+| `menuBorderColor`       | `string`                          | `'border-gray-200'`        | Border color for the menu                                 |
+| `menuShadow`            | `boolean`                         | `true`                     | Whether to show shadow on the menu                        |
+| `menuItemTextColor`     | `string`                          | `'text-gray-900'`          | Text color for menu items                                 |
+| `menuItemHoverColor`    | `string`                          | `'hover:bg-gray-50'`       | Hover color for menu items                                |
+| `menuItemActiveColor`   | `string`                          | `'bg-gray-100 text-gray-900'` | Active state color for menu items                     |
+| `onNavigationItemClick` | `(item: NavItem) => void`        | -                          | Callback when a navigation item is clicked                |
+| `onMenuOpenChange`      | `(isOpen: boolean) => void`       | -                          | Callback when menu open state changes                     |
+| `onLogoClick`           | `() => void`                      | -                          | Callback when logo is clicked                             |
+
+#### NavItem Interface
+
+```typescript
+interface NavItem {
+  id: string;
+  label: string;
+  href?: string;
+  icon?: ReactNode;
+  onClick?: () => void;
+  isActive?: boolean;
+  isDisabled?: boolean;
+  openInNewTab?: boolean;
+  type?: 'navigation' | 'action';
+}
+```
+
+| Property        | Type                              | Description                                                |
+| --------------- | --------------------------------- | ---------------------------------------------------------- |
+| `id`            | `string`                          | Unique identifier for the item                             |
+| `label`         | `string`                          | Display text for the item                                  |
+| `href`          | `string`                          | URL for navigation items                                   |
+| `icon`          | `ReactNode`                       | Optional icon for the item                                 |
+| `onClick`       | `() => void`                      | Function to call for action items                          |
+| `isActive`      | `boolean`                         | Whether the item is currently active                       |
+| `isDisabled`    | `boolean`                         | Whether the item is disabled                               |
+| `openInNewTab`  | `boolean`                         | Whether to open link in new tab                           |
+| `type`          | `'navigation' \| 'action'`       | Type of item (navigation for links, action for functions) |
+
+#### Features
+
+- **Responsive Design:** Automatically adapts to mobile and desktop views
+- **Flexible Navigation:** Supports both URL navigation and function calls
+- **Customizable Styling:** Extensive styling options for all elements
+- **Logo Integration:** Custom logo with click handler support
+- **Hamburger Menu:** Built-in responsive hamburger menu with dropdown/sidebar variants
+- **Environment Variables:** Support for environment-based navigation URLs
+- **Height Management:** Responsive height with mobile-specific sizing
+- **Border Consistency:** Consistent border styling across mobile and desktop
+- **Action Items:** Support for function-based items like logout
+- **Accessibility:** Proper ARIA labels and keyboard navigation
+
+#### Examples
+
+**Basic Navigation:**
+```javascript
+const navigationItems = [
+  { id: 'home', label: 'Home', href: '/', type: 'navigation' },
+  { id: 'about', label: 'About', href: '/about', type: 'navigation' },
+  { id: 'logout', label: 'Logout', type: 'action', onClick: handleLogout }
+];
+
+<ResponsiveNavbar
+  logo={<Logo />}
+  navigationItems={navigationItems}
+  onNavigationItemClick={handleItemClick}
+/>
+```
+
+**With Environment Variables:**
+```javascript
+const navigationItems = [
+  { 
+    id: 'spritz', 
+    label: 'Spritz', 
+    href: CONFIG.SpritzNavigationUrl || '/spritz',
+    type: 'navigation'
+  },
+  { 
+    id: 'logout', 
+    label: 'Log out', 
+    type: 'action',
+    onClick: () => {
+      // Handle logout logic
+      clearTokens();
+      redirectToLogin();
+    }
+  }
+];
+```
+
+**Custom Styling:**
+```javascript
+<ResponsiveNavbar
+  logo={<CustomLogo />}
+  rightContent={<UserMenu />}
+  navigationItems={navigationItems}
+  height={80}
+  mobileHeight={60}
+  backgroundColor="bg-blue-50"
+  borderColor="border-blue-200"
+  shadow={true}
+  menuItemTextColor="text-blue-900"
+  menuItemHoverColor="hover:bg-blue-100"
+  menuItemActiveColor="bg-blue-200 text-blue-900"
+/>
+```
+
+---
+
+## CustomCalendar
 
 ```Javascript
 import CustomCalendar from './CustomCalendar';
