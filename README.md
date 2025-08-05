@@ -1095,7 +1095,7 @@ import {Header} from "@activatestudio/spritz-ui-components"
 
 ---
 
-CustomCalendar
+# CustomCalendar
 React Custom Calendar component built on top of react-calendar with enhanced styling, formatting, and customization options.
 
 ```Javascript
