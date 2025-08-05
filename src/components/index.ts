@@ -35,3 +35,4 @@ export { BodyShimmer } from './shimmer/modalShimmer';
 export { HeaderShimmer } from './shimmer/modalShimmer';
 export { default as QueueShimmer } from './shimmer/queueShimmer';
 export { default as SideBarShimmer } from './shimmer/sideBarShimmer';
+export { default as CustomCalendar } from './calendar';
