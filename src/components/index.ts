@@ -35,4 +35,6 @@ export { BodyShimmer } from './shimmer/modalShimmer';
 export { HeaderShimmer } from './shimmer/modalShimmer';
 export { default as QueueShimmer } from './shimmer/queueShimmer';
 export { default as SideBarShimmer } from './shimmer/sideBarShimmer';
+export { default as ResponsiveNavbar } from './navbar/ResponsiveNavbar';
+export { default as HamburgerMenu } from './navbar/HamburgerMenu';
 export { default as CustomCalendar } from './calendar';
