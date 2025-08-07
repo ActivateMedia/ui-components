@@ -37,4 +37,5 @@ export { default as QueueShimmer } from './shimmer/queueShimmer';
 export { default as SideBarShimmer } from './shimmer/sideBarShimmer';
 export { default as ResponsiveNavbar } from './navbar/ResponsiveNavbar';
 export { default as HamburgerMenu } from './navbar/HamburgerMenu';
+export type { NavItem } from './navbar/ResponsiveNavbar';
 export { default as CustomCalendar } from './calendar';

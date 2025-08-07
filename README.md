@@ -1186,7 +1186,7 @@ interface NavItem {
   isActive?: boolean;
   isDisabled?: boolean;
   openInNewTab?: boolean;
-  type?: 'navigation' | 'action';
+  type?: 'navigation' | 'action' | 'separator';
 }
 ```
 
@@ -1200,7 +1200,9 @@ interface NavItem {
 | `isActive`      | `boolean`                         | Whether the item is currently active                       |
 | `isDisabled`    | `boolean`                         | Whether the item is disabled                               |
 | `openInNewTab`  | `boolean`                         | Whether to open link in new tab                           |
-| `type`          | `'navigation' \| 'action'`       | Type of item (navigation for links, action for functions) |
+| `type`          | `'navigation' \| 'action' \| 'separator'` | Type of item (navigation for links, action for functions, separator for visual dividers) |
+| `separatorElement` | `ReactNode`                    | Custom separator element (alternative to type: 'separator') |
+| `separatorStyle` | `{ height?: string, borderColor?: string, backgroundColor?: string, margin?: string }` | Custom styling for default separators |
 
 #### Features
 
@@ -1213,6 +1215,7 @@ interface NavItem {
 - **Height Management:** Responsive height with mobile-specific sizing
 - **Border Consistency:** Consistent border styling across mobile and desktop
 - **Action Items:** Support for function-based items like logout
+- **Separator Support:** Visual dividers to organize menu items
 - **Accessibility:** Proper ARIA labels and keyboard navigation
 
 #### Examples
@@ -1252,6 +1255,124 @@ const navigationItems = [
     }
   }
 ];
+```
+
+**With Separators (Type-based):**
+```javascript
+const navigationItems = [
+  { id: 'home', label: 'Home', href: '/', type: 'navigation' },
+  { id: 'about', label: 'About', href: '/about', type: 'navigation' },
+  { id: 'separator1', label: '', type: 'separator' },
+  { id: 'settings', label: 'Settings', href: '/settings', type: 'navigation' },
+  { id: 'profile', label: 'Profile', href: '/profile', type: 'navigation' },
+  { id: 'separator2', label: '', type: 'separator' },
+  { id: 'logout', label: 'Logout', type: 'action', onClick: handleLogout }
+];
+```
+
+**With Custom Separator Elements:**
+```javascript
+const navigationItems = [
+  { id: 'home', label: 'Home', href: '/', type: 'navigation' },
+  { id: 'about', label: 'About', href: '/about', type: 'navigation' },
+  { 
+    id: 'separator1', 
+    label: '', 
+    separatorElement: <div className="w-full h-px bg-blue-300 my-3" />
+  },
+  { id: 'settings', label: 'Settings', href: '/settings', type: 'navigation' },
+  { id: 'profile', label: 'Profile', href: '/profile', type: 'navigation' },
+  { 
+    id: 'separator2', 
+    label: '',
+    separatorElement: (
+        <div 
+          style={{
+            width: '100%',
+            height: '1px',
+            backgroundColor: 'red',
+            margin: '10px 0',
+            borderBottom: '1px solid grey'
+          }}
+        />
+      )
+  },
+  { id: 'logout', label: 'Logout', type: 'action', onClick: handleLogout }
+];
+```
+
+**With Custom Separator Styling:**
+```javascript
+const navigationItems = [
+  { id: 'home', label: 'Home', href: '/', type: 'navigation' },
+  { id: 'about', label: 'About', href: '/about', type: 'navigation' },
+  { 
+    id: 'separator1', 
+    label: '', 
+    type: 'separator',
+    separatorStyle: {
+      height: '2px',
+      backgroundColor: '#3b82f6',
+      margin: '12px 0'
+    }
+  },
+  { id: 'settings', label: 'Settings', href: '/settings', type: 'navigation' },
+  { id: 'profile', label: 'Profile', href: '/profile', type: 'navigation' },
+  { 
+    id: 'separator2', 
+    label: '', 
+    type: 'separator',
+    separatorStyle: {
+      height: '1px',
+      backgroundColor: '#ef4444',
+      margin: '8px 0'
+    }
+  },
+  { id: 'logout', label: 'Logout', type: 'action', onClick: handleLogout }
+];
+```
+
+**Troubleshooting Separators:**
+
+If separators are not showing up, ensure:
+1. The `type` is set to `'separator'` or `separatorElement` is provided
+2. For type-based separators, the component will render a default gray line
+3. For custom styling, use `separatorStyle` properties
+4. For complex separators, use `separatorElement` with custom JSX
+
+**Advanced Separator Examples:**
+```javascript
+// Gradient separator
+{ 
+  id: 'gradient-separator', 
+  label: '', 
+  type: 'separator',
+  separatorStyle: {
+    height: '3px',
+    background: 'linear-gradient(90deg, #3b82f6, #8b5cf6, #ec4899)',
+    margin: '16px 0'
+  }
+}
+
+// Dashed border separator
+{ 
+  id: 'dashed-separator', 
+  label: '', 
+  separatorElement: <div className="w-full h-px border-t-2 border-dashed border-gray-400 my-4" />
+}
+
+// Text separator with line
+{ 
+  id: 'text-separator', 
+  label: '', 
+  separatorElement: (
+    <div className="flex items-center w-full my-4">
+      <div className="flex-1 h-px bg-gray-300"></div>
+      <span className="px-3 text-xs text-gray-500">OR</span>
+      <div className="flex-1 h-px bg-gray-300"></div>
+    </div>
+  )
+}
 ```
 
 **Custom Styling:**
