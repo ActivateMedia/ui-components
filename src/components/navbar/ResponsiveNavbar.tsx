@@ -11,7 +11,15 @@ export interface NavItem {
   isActive?: boolean;
   isDisabled?: boolean;
   openInNewTab?: boolean;
-  type?: 'navigation' | 'action';
+  type?: 'navigation' | 'action' | 'separator';
+  separatorElement?: ReactNode; // Custom separator element
+  separatorStyle?: {
+    height?: string;
+    borderColor?: string;
+    backgroundColor?: string;
+    background?: string;
+    margin?: string;
+  };
 }
 
 /* Responsive Navbar interface */
@@ -140,6 +148,11 @@ const ResponsiveNavbar: FunctionComponent<ResponsiveNavbarProps> = ({
 
   // Handle item click
   const handleItemClick = (item: NavItem) => {
+    // Skip processing for separator items
+    if (item.type === 'separator' || item.separatorElement) {
+      return;
+    }
+
     onNavigationItemClick?.(item);
     setIsMenuOpen(false);
     onMenuOpenChange?.(false);
@@ -375,25 +388,65 @@ const ResponsiveNavbar: FunctionComponent<ResponsiveNavbarProps> = ({
                 )}
 
                 {/* Menu Items */}
-                <div className="p-3 flex flex-col items-start gap-3">
-                  {navigationItems.map((item) => (
-                    <button
-                      key={item.id}
-                      onClick={() => handleItemClick(item)}
-                      disabled={item.isDisabled}
-                      className={mergeCls([
-                        'w-full text-left transition-colors duration-200',
-                        menuItemTextColor,
-                        menuItemHoverColor,
-                        item.isActive && menuItemActiveColor,
-                        item.isDisabled && 'opacity-50 cursor-not-allowed'
-                      ])}
-                    >
-                      <span className="flex-1">
-                        {item.label}
-                      </span>
-                    </button>
-                  ))}
+                <div className="p-3 flex flex-col items-start">
+                  {navigationItems.map((item) => {
+                    // Handle separator items
+                    if (item.type === 'separator' || item.separatorElement) {
+                      console.log('Rendering separator:', item.id, item.type, item.separatorElement ? 'custom' : 'default');
+                      // If user provided a custom separator element, use it
+                      if (item.separatorElement) {
+                        return (
+                          <div
+                            key={item.id}
+                            className="w-full"
+                            role="separator"
+                            aria-label="Menu separator"
+                          >
+                            {item.separatorElement}
+                          </div>
+                        );
+                      }
+                      
+                      // Otherwise use default separator styling with optional custom styles
+                      const defaultStyle = {
+                        height: item.separatorStyle?.height || '2px',
+                        backgroundColor: item.separatorStyle?.backgroundColor || '#d1d5db',
+                        background: item.separatorStyle?.background,
+                        margin: item.separatorStyle?.margin || '12px 0',
+                        borderColor: item.separatorStyle?.borderColor,
+                        width: '100%'
+                      };
+                      
+                      return (
+                        <div
+                          key={item.id}
+                          style={defaultStyle}
+                          role="separator"
+                          aria-label="Menu separator"
+                        />
+                      );
+                    }
+
+                    // Handle regular navigation/action items
+                    return (
+                      <button
+                        key={item.id}
+                        onClick={() => handleItemClick(item)}
+                        disabled={item.isDisabled}
+                        className={mergeCls([
+                          'w-full text-left transition-colors duration-200 mb-3',
+                          menuItemTextColor,
+                          menuItemHoverColor,
+                          item.isActive && menuItemActiveColor,
+                          item.isDisabled && 'opacity-50 cursor-not-allowed'
+                        ])}
+                      >
+                        <span className="flex-1">
+                          {item.label}
+                        </span>
+                      </button>
+                    );
+                  })}
                 </div>
               </div>
             </>
